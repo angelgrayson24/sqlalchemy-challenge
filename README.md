@@ -10,24 +10,25 @@ The Weather API allows users to access weather data for a particular location. I
 - SQLite
 - Python
 
-  # Use the SQLAlchemy create_engine() function to connect to your SQLite database.
+  ## Use the SQLAlchemy create_engine() function to connect to your SQLite database.
   ```
   engine = create_engine("sqlite:///hawaii.sqlite")
   ```
-  # Use the SQLAlchemy automap_base() function to reflect your tables into classes, and then save references to the classes named station and measurement.
+  ## Use the SQLAlchemy automap_base() function to reflect your tables into classes, and then save references to the classes named station and measurement.
  ```
 Base = automap_base()
 Base.prepare(autoload_with=engine)
 Measurement = Base.classes.measurement
 Station = Base.classes.station
 ```
-# Link Python to the database by creating a SQLAlchemy session.
+## Link Python to the database by creating a SQLAlchemy session.
 ```
 session = Session(engine)
 ```
 
-## Analysis
-# Station Histogram
+# Analysis
+Performed precipitation and station analysis. Created a graph to visualize precipitation in inches by dates.
+## Station Histogram
 To analyze and visualize the distribution of temperature observations from the most active weather station, a histogram is created. The following steps can be taken:
 
 -Identify the most active weather station.
